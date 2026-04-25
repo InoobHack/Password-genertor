@@ -1,0 +1,23 @@
+
+#include <iostream>
+using namespace std;
+#include <ctime>
+#include <cstdlib>
+int main()
+{
+int password;
+srand(time(0));
+string myString = "qwe!rtyuiop*asdfg@hjklzxc#vbnmQWE$RTYUIOPASDFG^HJKLZXC&VBNM1234567890%";
+cout << "How long password: ";
+cin >> password;
+if(cin.fail()){ 
+    cin.clear();
+    cin.ignore(1000, '\n');
+    cout << "\nOnly numbers allowed(Hit run to do again)";
+}
+for(int i = 0; i < password; ++i){
+   int r = rand() % myString.size();
+    cout << myString[r];
+}
+
+}
