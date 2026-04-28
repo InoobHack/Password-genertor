@@ -3,21 +3,35 @@
 using namespace std;
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
 int main()
 {
 int password;
+string website;
 srand(time(0));
 string myString = "qwe!rtyuiop*asdfg@hjklzxc#vbnmQWE$RTYUIOPASDFG^HJKLZXC&VBNM1234567890%";
+cout << "For what webiste/app: ";
+cin >> website;
+if(cin.fail()){
+    cin.clear();
+    cin.ignore(1000, '\n');
+    cout << "\nOnly letters allowed(Hit run to do again)";
+}
 cout << "How long password: ";
 cin >> password;
-if(cin.fail()){ 
+if(cin.fail()){
     cin.clear();
     cin.ignore(1000, '\n');
     cout << "\nOnly numbers allowed(Hit run to do again)";
 }
+string thepass = "";
 for(int i = 0; i < password; ++i){
    int r = rand() % myString.size();
+    thepass += myString[r];
     cout << myString[r];
+    
 }
+ofstream file("passwords.txt", ios::app);
+file << website << " Password = " << thepass << endl;
 
 }
