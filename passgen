@@ -1,4 +1,11 @@
+/*
 
+Make sure to check your passwords out 
+in the password.txt file
+it will tell you the website and password
+thanks for the support! 
+
+*/
 #include <iostream>
 using namespace std;
 #include <ctime>
